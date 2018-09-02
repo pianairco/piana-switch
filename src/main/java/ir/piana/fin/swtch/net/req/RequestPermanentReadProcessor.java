@@ -12,7 +12,7 @@ public class RequestPermanentReadProcessor extends RequestProcessor {
 
     @Override
     public void read() {
-        while (socket.isConnected()) {
+        while (!socket.isClosed()) {
             super.read();
         }
     }
